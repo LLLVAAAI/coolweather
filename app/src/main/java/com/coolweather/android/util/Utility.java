@@ -3,7 +3,7 @@ package com.coolweather.android.util;
 import android.text.TextUtils;
 
 import com.coolweather.android.db.City;
-import com.coolweather.android.db.Country;
+import com.coolweather.android.db.County;
 import com.coolweather.android.db.Province;
 
 import org.json.JSONArray;
@@ -70,11 +70,11 @@ public class Utility {
                 for (int i=0;i<allCountries.length();i++){
                     JSONObject countryObject = allCountries.getJSONObject(i);
 
-                    Country country = new Country();
-                    country.setCityId(cityId);
-                    country.setCountryName(countryObject.getString("name"));
-                    country.setWeatherId(countryObject.getString("weather_id"));
-                    country.save();
+                    County county = new County();
+                    county.setCityId(cityId);
+                    county.setCountryName(countryObject.getString("name"));
+                    county.setWeatherId(countryObject.getString("weather_id"));
+                    county.save();
                 }
                 return true;
             }catch (JSONException e){
